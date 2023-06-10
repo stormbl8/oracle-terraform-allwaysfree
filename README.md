@@ -1,4 +1,4 @@
-# Oracle Cloud Always Free Ampere A1 Compute instance
+# Oracle Cloud Always Free Ampere A1 & E2.1 Compute instance
 
 Terraform module which creates an Always Free Ampere A1 Compute instance in Oracle Cloud.
 
