@@ -1,0 +1,28 @@
+#cloud-config
+# # See documentation for more configuration examples
+# # https://cloudinit.readthedocs.io/en/latest/reference/examples.html 
+
+cloud_config_modules:
+  - timezone "Europe/Berlin"
+
+packages:
+  - git
+  - tmux
+  - vim
+  - ssh-import-id
+
+users:
+  - name: cloud-ops             # this line is username
+    gecos: Cloud Operations       # this line is Name and Lastname as you wish
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin, sudo
+    home: /home/cloud-ops
+    lock_passwd: false
+    shell: /bin/bash
+    ssh_import_id:
+
+    ssh_authorized_keys: # add rsa pub key here in order to access to system via SSH
+
+bootcmd:
+  - date > /etc/Initial_Install_Date # this will create the initial date of the installation of the server
+
